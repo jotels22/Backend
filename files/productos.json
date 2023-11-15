@@ -4,7 +4,7 @@
     "description": "Frescas manzanas de Viedma",
     "price": 30,
     "thumbnail": "",
-    "code": "abc123",
+    "code": "-",
     "stock": 55,
     "id": 1
   },
@@ -19,7 +19,7 @@
     "nombre": "Duraznos"
   },
   {
-    "title": "Duraznos",
+    "title": "Naranjas",
     "description": "Jugosas Naranjas neuquinas",
     "price": 70,
     "thumbnail": "",

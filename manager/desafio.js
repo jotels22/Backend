@@ -116,7 +116,7 @@ export default class ProductManager {
 
     }
 
-    deleteProduct = () => {
+    deleteProduct = async () => {
 
     if(fs.existsSync(path)){
         fs.readFile(path, 'utf8', (err, data) => {
@@ -126,6 +126,8 @@ export default class ProductManager {
             }
         
             const arrayDeObjetos = JSON.parse(data);
+
+            console.log(data);
         
 
             const objetoEliminar = arrayDeObjetos.find(objeto => objeto.code === "abc123" );
@@ -155,6 +157,7 @@ export default class ProductManager {
 
 const productManager = new ProductManager();
 productManager.updateProduct()
+productManager.deleteProduct()
 
 
 // let producto = productManager.addProducto("Manzanas", "Frescas manzanas de Viedma",30,"","abc123",45333)
