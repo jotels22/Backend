@@ -84,11 +84,33 @@ export default class ProductManager {
     updateProduct = async () => {
         if(fs.existsSync(path)){
 
-            let contenido = fs.readFileSync(path, "utf-8") 
-            console.log(contenido)
-
+            fs.readFile(path, 'utf8', (err, data) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
             
-        
+                const arrayDeObjetos = JSON.parse(data);
+            
+                const objetoModificar = arrayDeObjetos.find(objeto => objeto.title === 'Duraznos');
+                if (objetoModificar) {
+                    objetoModificar.title = 'Naranjas';
+                } else {
+                    console.log('Objeto no encontrado.');
+                    return;
+                }
+    
+                const nuevoContenido = JSON.stringify(arrayDeObjetos, null, 2);
+            
+                fs.writeFile(path, nuevoContenido, 'utf8', (err) => {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+            
+                    console.log('El archivo ha sido modificado correctamente.');
+                });
+            });
         
         }
 
@@ -96,7 +118,37 @@ export default class ProductManager {
 
     deleteProduct = () => {
 
+    if(fs.existsSync(path)){
+        fs.readFile(path, 'utf8', (err, data) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+        
+            const arrayDeObjetos = JSON.parse(data);
+        
+
+            const objetoEliminar = arrayDeObjetos.find(objeto => objeto.code === "abc123" );
+            if (objetoEliminar) {
+                objetoEliminar.code = '-';
+            } else {
+                console.log('Objeto no encontrado.');
+                return;
+            }
+        
+            const contenidoEliminado = JSON.stringify(arrayDeObjetos, null, 2);
+        
+            fs.writeFile(path, contenidoEliminado, 'utf8', (err) => {
+                if (err) {
+                    console.error(err);
+                    return;
+                }
+        
+                console.log('El archivo ha sido eliminado correctamente.');
+            });
+        });
     }
+}
 
 
 }

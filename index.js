@@ -19,8 +19,7 @@ const env = async () => {
     let result = await manager.crearProducto(producto)
     console.log(result);
 
-    let variableCambiada = 
 
-}
+    }
 
 env()

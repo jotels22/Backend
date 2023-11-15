@@ -1,0 +1,29 @@
+[
+	{
+		"title": "Manzanas",
+		"description": "Frescas manzanas de Viedma",
+		"price": 30,
+		"thumbnail": "",
+		"code": "abc123",
+		"stock": 55,
+		"id": 1
+	},
+	{
+		"title": "Naranjas",
+		"description": "Jugosas Naranjas neuquinas",
+		"price": 70,
+		"thumbnail": "",
+		"code": "abc12565",
+		"stock": 54,
+		"id": 2
+	},
+	{
+		"title": "Naranjas",
+		"description": "Jugosas Naranjas neuquinas",
+		"price": 70,
+		"thumbnail": "",
+		"code": "abc12565",
+		"stock": 54,
+		"id": 3
+	}
+]
